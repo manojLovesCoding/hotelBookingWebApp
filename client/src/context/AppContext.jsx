@@ -34,13 +34,16 @@ export const AppProvider = ({ children }) => {
     } catch (error) {
       toast.error(error.message);
     }
+
+    
   };
 
   useEffect(() => {
-    if (user) {
-      fetchUser();
-    }
-  }, []);
+  if (user) {
+    fetchUser();
+  }
+}, [user]);
+
   const value = {
     currency,
     navigate,
