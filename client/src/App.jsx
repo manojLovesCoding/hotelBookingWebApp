@@ -12,7 +12,7 @@ import Dashboard from "./pages/HotelOwner/Dashboard";
 import AddRoom from "./pages/HotelOwner/AddRoom";
 import ListRoom from "./pages/HotelOwner/ListRoom";
 import { Toaster } from "react-hot-toast";
-import { useAppContext } from "./context/appContext";
+import { useAppContext } from "./context/AppContext";
 
 const App = () => {
   const isOwnerAuth = useLocation().pathname.includes("owner");
