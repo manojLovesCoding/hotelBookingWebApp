@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Title from "../../components/Title";
-import { assets,} from "../../assets/assets";
+import { assets } from "../../assets/assets";
 import { useAppContext } from "../../context/AppContext";
 
 const Dashboard = () => {
@@ -90,13 +90,13 @@ const Dashboard = () => {
             {dashboardData.bookings.map((item, index) => (
               <tr key={index}>
                 <td className="py-3 px-4 text-gray-700 border-t border-gray-300">
-                  {item.user.username}
+                  {item.user?.username || "Unknown User"}
                 </td>
                 <td className="py-3 px-4 text-gray-700 border-t border-gray-300 max-sm:hidden">
-                  {item.room.roomType}
+                  {item.room?.roomType || "Unknown Room"}
                 </td>
                 <td className="py-3 px-4 text-gray-700 border-t border-gray-300 text-center">
-                {currency} {item.totalPrice}
+                  {currency} {item.totalPrice}
                 </td>
                 <td className="py-3 px-4 text-gray-700 border-t border-gray-300 flex">
                   <button
